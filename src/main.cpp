@@ -41,16 +41,16 @@ public:
 
 int main()
 {
-    auto window = sf::RenderWindow(sf::VideoMode({1920u, 1080u}), "ChessFML");
+    auto window = sf::RenderWindow(sf::VideoMode({800u, 800u}), "ChessFML");
     window.setFramerateLimit(69);
     
     //init game board
     Board board;
-
+    
     sf::Texture boardTexture("assets/board.png");
     sf::Sprite boardSprite(boardTexture);
+    boardSprite.setScale({ 5.0f, 5.0f });
     
-
    
        
     while (window.isOpen())
