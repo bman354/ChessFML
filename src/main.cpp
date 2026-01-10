@@ -20,6 +20,8 @@ enum pieceID {
 
 
 
+
+
 class Board {
 public:
     pieceID boardState[8][8] = {
@@ -51,14 +53,25 @@ int main()
     //init game board
     Board board;
     
+    #pragma region TextureLoading
     sf::Texture boardTexture("assets/board.png");
     sf::Sprite boardSprite(boardTexture);
     boardSprite.setScale({ 5.0f, 5.0f });
     
     //should put piece loading in a function after i finish
     sf::Texture bPAWNTexture("assets/b_pawn.png");
-    sf::Sprite bPAWNSprite(bPAWNTexture);
-    bPAWNSprite.setScale({ 5.0f, 5.0f });
+    sf::Texture bROOKTexture("assets/b_rook.png");
+    sf::Texture bKNIGHTTexture("assets/b_knight.png");
+    sf::Texture bBISHOPTexture("assets/b_bishop.png");
+    sf::Texture bQUEENTexture("assets/b_queen.png");
+    sf::Texture bKINGTexture("assets/b_king.png");
+    sf::Texture wPAWNTexture("assets/w_pawn.png");
+    sf::Texture wROOKTexture("assets/w_rook.png");
+    sf::Texture wKNIGHTTexture("assets/w_knight.png");
+    sf::Texture wBISHOPTexture("assets/w_bishop.png");
+    sf::Texture wQUEENTexture("assets/w_queen.png");
+    sf::Texture wKINGTexture("assets/w_king.png");
+    #pragma endregion
        
     while (window.isOpen())
     {
@@ -118,8 +131,3 @@ void Board::renderBoard(sf::RenderWindow &window){
 
 
 }
-
-
-
-
-
