@@ -51,7 +51,10 @@ int main()
     sf::Sprite boardSprite(boardTexture);
     boardSprite.setScale({ 5.0f, 5.0f });
     
-   
+    //should put piece loading in a function after i finish
+    sf::Texture bPAWNTexture("assets/b_pawn.png");
+    sf::Sprite bPAWNSprite(bPAWNTexture);
+    bPAWNSprite.setScale({ 5.0f, 5.0f });
        
     while (window.isOpen())
     {
@@ -72,6 +75,7 @@ int main()
         //these render everything
         window.clear();
         window.draw(boardSprite);
+        window.draw(bPAWNSprite);
         window.display();
     }
 }
