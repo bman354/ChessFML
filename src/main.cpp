@@ -19,6 +19,7 @@ enum pieceID {
 };
 
 
+
 class Board {
 public:
     pieceID boardState[8][8] = {
@@ -33,6 +34,9 @@ public:
     { wROOK, wKNIGHT, wBISHOP, wQUEEN, wKING, wBISHOP, wKNIGHT, wROOK }
 
     };
+
+    pieceID getPiece(int x, int y);
+    void renderBoard(sf::RenderWindow &window);
 
 };
 
@@ -67,21 +71,53 @@ int main()
                 window.close();
             }
 
-            //game logic here
 
 
         }
+        //game logic here
 
-        //these render everything
+        board.boardState[0][0];
+
+
+
+        //rendering logic here
         window.clear();
-        window.draw(boardSprite);
-        window.draw(bPAWNSprite);
+        
+        
+
+        board.renderBoard(window);
+
+
+
+
+
+
         window.display();
     }
 }
 
 
+pieceID Board::getPiece(int x, int y) {
+    return this->boardState[y][x];
+}
 
+void Board::renderBoard(sf::RenderWindow &window){
+    window.draw(boardSprite);
+    /*
+        Loop through all 64 squares
+        switch(piece):
+            case bROOK:
+                window.draw(bRookTexture, x*100, y*100)
+                break
+            case bKNIGHT:
+                etc etc etc
+
+
+
+    */
+
+
+}
 
 
 
